@@ -115,7 +115,7 @@ function _lookupPrice(url) {
 
     } catch (e) {
       console.log('GoodRx Error', url, parsed, e)
-      return ['GoodRx Error '+res]
+      return ['GoodRx Error', e.message, JSON.stringify(parsed)]
     }  
   }
    
