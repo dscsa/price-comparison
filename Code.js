@@ -9,10 +9,7 @@ function goodrxAPI(name, dosage, form, qty) {
   var results = []
   for (var i in name) {
     var result = _goodrxAPI(name[i][0], dosage[i][0], form[i][0], qty[i][0])
-    if (result) {
-      //console.log('goodrxAPI', 'name', name[i], 'dosage', dosage[i], 'form', form[i], 'qty', qty[i])
-      //console.log('goodrxAPI', 'result', [result])
-    }
+    if ( ! (i % 10)) console.log('goodrxAPI', i, 'of', name.length)
     results.push([result])
   }
   console.log('goodrxAPI', 'results', results)
@@ -65,10 +62,7 @@ function lookupPrice(url) {
   var results = []
   for (var i in url) {
     var result = _lookupPrice(url[i][0]).concat(['','']).slice(0,3) //Each row much be EXACTLY three cols or Range.SetValues() will throw errors
-    if (result) {
-      //console.log('lookupPrice', 'url', url[i])
-      //console.log('lookupPrice', 'result', result)
-    }
+    if ( ! (i % 10)) console.log('lookupPrice', i, 'of', url.length)
     results.push(result)
   }
 
